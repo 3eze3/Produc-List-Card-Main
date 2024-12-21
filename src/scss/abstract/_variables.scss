@@ -1,0 +1,56 @@
+// --------------------------- @Font-Face -----------------------------
+@font-face {
+	font-family: 'Red-Hat-Bd';
+	font-weight: 600;
+	src: local('RedHatText-Bold'),
+		url('../assest/fonts/static/RedHatText-Bold.woff2') format(woff2),
+		url('../assest/fonts/static/RedHatText-Bold.woff') format(woff),
+		url('../assest/fonts/static/RedHatText-Bold.ttf') format(truetype);
+}
+
+@font-face {
+	font-family: 'Red-Hat-Sm';
+	src: local('RedHatText-SemiBold'),
+		url('../assest/fonts/static/RedHatText-SemiBold.woff2') format(woff2),
+		url('../assest/fonts/static/RedHatText-SemiBold.woff') format(woff),
+		url('../assest/fonts/static/RedHatText-SemiBold.ttf') format(truetype);
+}
+
+@font-face {
+	font-family: 'Red-Hat-Rg';
+	src: local('RedHatText-Regular'),
+		url('../assest/fonts/static/RedHatText-Regular.woff2') format(woff2),
+		url('../assest/fonts/static/RedHatText-Regular.woff') format(woff),
+		url('../assest/fonts/static/RedHatText-Regular.ttf') format(truetype);
+}
+
+@font-face {
+	font-family: 'Red-Hat-Lg';
+	src: local('RedHatText-Light'),
+		url('../assest/fonts/RedHatText-Light.woff2') format(woff2),
+		url('../assest/fonts/RedHatText-Light.woff') format(woff),
+		url('../assest/fonts/RedHatText-Light.ttf') format(truetype);
+}
+
+// --------------------------- Family Fonts ---------------------------
+$Red-Hat-bd: 'Red-Hat-Bd';
+$Red-Hat-sm: 'Red-Hat-Sm';
+$Red-Hat-rg: 'Red-Hat-Rg';
+$Red-Hat-lg: 'Red-Hat-Lg';
+
+// --------------------------- Size Fonts -----------------------------
+$product-names: 16px;
+$mobile: 375px;
+$desktop: 1440px;
+// --------------------------- Colors -----------------------------
+
+$red: hsl(14, 86%, 42%);
+$green: hsl(159, 69%, 38%);
+$white: hsl(0, 0%, 100%);
+
+$rose-50: hsl(20, 50%, 98%);
+$rose-100: hsl(13, 31%, 94%);
+$rose-300: hsl(14, 25%, 72%);
+$rose-400: hsl(7, 20%, 60%);
+$rose-500: hsl(12, 20%, 44%);
+$rose-900: hsl(14, 65%, 9%);
