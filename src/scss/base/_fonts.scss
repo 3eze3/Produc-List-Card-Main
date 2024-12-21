@@ -1,0 +1,60 @@
+@use '../abstract/variables' as v;
+body {
+	min-height: 100dvh;
+	font-family: v.$Red-Hat-rg;
+	background-color: v.$rose-50;
+	hyphens: manual;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+span {
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-family: v.$Red-Hat-bd;
+	font-size: 2em;
+	color: v.$rose-900;
+}
+
+h2 {
+	font-size: 1em;
+}
+
+span {
+	font-family: v.$Red-Hat-lg;
+}
+
+.summary__title {
+	font-size: 1.6em;
+	font-family: v.$Red-Hat-bd;
+	color: v.$red;
+}
+
+.summary__description {
+	font-size: 0.9em;
+	font-family: v.$Red-Hat-sm;
+}
+
+.card__name {
+	font-size: 0.86em;
+}
+
+.card__price {
+	color: v.$red;
+	font-family: v.$Red-Hat-sm;
+}
+
+h2,
+.card__addBtn {
+	font-family: v.$Red-Hat-rg;
+	font-weight: 700;
+}
