@@ -1,0 +1,36 @@
+// Media Query
+@mixin mobile($query) {
+	@media (width <= $query) {
+		@content;
+	}
+}
+// Flext template
+@mixin flex($aling: center, $justify: center, $direction: column, $gap: 2rem) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $aling;
+	justify-content: $justify;
+	gap: $gap;
+}
+// Grid template
+@mixin grid() {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	align-items: flex-start;
+	gap: 2rem;
+}
+@mixin gridResponsive($size) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
+
+	gap: 2.4rem 1.5rem;
+}
+
+// Box shadow
+@mixin shadowNeo($eje, $color) {
+	background-color: $color;
+	$soft-color: color-mix(in srgb, $color, #000, 30%);
+	$light-color: color-mix(in srgb, $color, #fff, 30%);
+	box-shadow: $eje $eje ($eje * 2) $soft-color inset,
+		-($eje) -($eje) ($eje * 2) $light-color inset;
+}
