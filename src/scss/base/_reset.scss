@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+*::before,
+*::after {
+	display: block;
+}
+
+img,
+picture,
+figure {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	object-position: center center;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+svg {
+	width: 100%;
+	display: block;
+	fill: currentColor;
+}
