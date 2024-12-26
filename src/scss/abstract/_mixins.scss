@@ -1,10 +1,9 @@
-// Media Query
 @mixin mobile($query) {
 	@media (width <= $query) {
 		@content;
 	}
 }
-// Flext template
+
 @mixin flex($aling: center, $justify: center, $direction: column, $gap: 2rem) {
 	display: flex;
 	flex-direction: $direction;
@@ -12,21 +11,20 @@
 	justify-content: $justify;
 	gap: $gap;
 }
-// Grid template
+
 @mixin grid() {
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	align-items: flex-start;
-	gap: 2rem;
+	gap: 2.5rem;
 }
+
 @mixin gridResponsive($size) {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
-
 	gap: 2.4rem 1.5rem;
 }
 
-// Box shadow
 @mixin shadowNeo($eje, $color) {
 	background-color: $color;
 	$soft-color: color-mix(in srgb, $color, #000, 30%);
