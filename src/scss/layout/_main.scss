@@ -1,0 +1,14 @@
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+.main {
+	max-width: 1400px;
+	min-height: 100dvh;
+	margin: auto;
+	padding: 5rem 6rem;
+	@include mx.grid();
+	@include mx.mobile(v.$tablet) {
+		text-align: center;
+		grid-template-columns: 1fr;
+		padding: 1rem;
+	}
+}
