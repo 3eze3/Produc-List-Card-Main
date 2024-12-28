@@ -3,33 +3,33 @@
 	font-family: 'Red-Hat-Bd';
 	font-weight: 600;
 	src: local('RedHatText-Bold'),
-		url('../assest/fonts/static/RedHatText-Bold.woff2') format(woff2),
-		url('../assest/fonts/static/RedHatText-Bold.woff') format(woff),
-		url('../assest/fonts/static/RedHatText-Bold.ttf') format(truetype);
+		url('../assets/fonts/static/RedHatText-Bold.woff2') format(woff2),
+		url('../assets/fonts/static/RedHatText-Bold.woff') format(woff),
+		url('../assets/fonts/static/RedHatText-Bold.ttf') format(truetype);
 }
 
 @font-face {
 	font-family: 'Red-Hat-Sm';
 	src: local('RedHatText-SemiBold'),
-		url('../assest/fonts/static/RedHatText-SemiBold.woff2') format(woff2),
-		url('../assest/fonts/static/RedHatText-SemiBold.woff') format(woff),
-		url('../assest/fonts/static/RedHatText-SemiBold.ttf') format(truetype);
+		url('../assets/fonts/static/RedHatText-SemiBold.woff2') format(woff2),
+		url('../assets/fonts/static/RedHatText-SemiBold.woff') format(woff),
+		url('../assets/fonts/static/RedHatText-SemiBold.ttf') format(truetype);
 }
 
 @font-face {
 	font-family: 'Red-Hat-Rg';
 	src: local('RedHatText-Regular'),
-		url('../assest/fonts/static/RedHatText-Regular.woff2') format(woff2),
-		url('../assest/fonts/static/RedHatText-Regular.woff') format(woff),
-		url('../assest/fonts/static/RedHatText-Regular.ttf') format(truetype);
+		url('../assets/fonts/static/RedHatText-Regular.woff2') format(woff2),
+		url('../assets/fonts/static/RedHatText-Regular.woff') format(woff),
+		url('../assets/fonts/static/RedHatText-Regular.ttf') format(truetype);
 }
 
 @font-face {
 	font-family: 'Red-Hat-Lg';
 	src: local('RedHatText-Light'),
-		url('../assest/fonts/RedHatText-Light.woff2') format(woff2),
-		url('../assest/fonts/RedHatText-Light.woff') format(woff),
-		url('../assest/fonts/RedHatText-Light.ttf') format(truetype);
+		url('../assets/fonts/RedHatText-Light.woff2') format(woff2),
+		url('../assets/fonts/RedHatText-Light.woff') format(woff),
+		url('../assets/fonts/RedHatText-Light.ttf') format(truetype);
 }
 
 // --------------------------- Family Fonts ---------------------------
@@ -41,6 +41,7 @@ $Red-Hat-lg: 'Red-Hat-Lg';
 // --------------------------- Size Fonts -----------------------------
 $product-names: 16px;
 $mobile: 375px;
+$tablet: 770px;
 $desktop: 1440px;
 // --------------------------- Colors -----------------------------
 
@@ -54,3 +55,5 @@ $rose-300: hsl(14, 25%, 72%);
 $rose-400: hsl(7, 20%, 60%);
 $rose-500: hsl(12, 20%, 44%);
 $rose-900: hsl(14, 65%, 9%);
+
+$drop-shadow-rose: drop-shadow(0.25rem 1rem 0.6rem $rose-300);
