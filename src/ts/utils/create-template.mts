@@ -1,10 +1,13 @@
 import { Product } from '../types/product-types.mjs'
 export function createTemplate(
-	{ image, name, category, price }: Product,
+	{ image, name, category, price, id }: Product,
 	index: number
 ) {
 	const $figure = document.querySelectorAll('.card__figure')
-	if ($figure[index])
+	if ($figure[index]) {
+		$figure[index].innerHTML = ''
+		$figure[index].setAttribute('id', id)
+
 		$figure[index].innerHTML = `
 		  <picture class="card__picture">
 		  <source media="(max-width:600px)" srcset="${image.mobile}"/>
@@ -20,4 +23,5 @@ export function createTemplate(
 		  <span class="card__price">$${price}</span>
 		</figcaption>
 	`
+	}
 }
