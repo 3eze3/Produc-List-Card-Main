@@ -1,0 +1,94 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+.card {
+	position: relative;
+	@include mx.flex($aling: stretch, $justify: stretch, $gap: 0);
+	&__img {
+		min-width: 243.55px;
+		min-height: 233.87px;
+		border-radius: 0.75rem;
+		transition: transform 0.2s ease, filter 0.1s ease;
+		&-selected {
+			transform: scale(1.035);
+			filter: v.$drop-shadow-rose;
+		}
+	}
+
+	&__figure {
+		min-height: 338.69px;
+	}
+
+	&__figcaption {
+		margin-top: 2.5rem;
+		min-height: 65.81px;
+		@include mx.flex($aling: flex-start, $justify: flex-start, $gap: 0.2rem);
+	}
+
+	&__btn {
+		border-radius: 1.25rem;
+		width: 9.5rem;
+		height: 2.5rem;
+		top: calc(100% - 125px);
+		left: calc(50% - 4.75rem);
+		position: absolute;
+		background-color: v.$white;
+		z-index: 20;
+		@include mx.flex($direction: row, $gap: 0.4rem);
+
+		&::before {
+			content: url('../assets/images/icons/icon-add-to-cart.svg');
+			display: block;
+		}
+		outline: solid v.$rose-900 1px;
+
+		&:hover {
+			outline: solid v.$red 1px;
+			color: v.$red;
+		}
+
+		&:hover + .card__figure .card__img {
+			transform: scale(1.035);
+			filter: v.$drop-shadow-rose;
+		}
+
+		transition: color 0.1s ease;
+
+		&--wrapper {
+			background-color: v.$red;
+			outline: solid v.$red 1px;
+			display: none;
+
+			&::before {
+				content: none;
+			}
+
+			&-selected {
+				@include mx.flex($direction: row, $justify: space-around, $gap: 0rem);
+			}
+		}
+	}
+
+	&__actionBtn {
+		outline: solid v.$white 1px;
+		width: 1.4rem;
+		height: 1.4rem;
+		padding: 0.4rem;
+		@include mx.flex($direction: row, $gap: 0rem);
+		border-radius: 50%;
+		background-color: v.$red;
+		&:hover {
+			background-color: v.$white;
+		}
+		transition: background-color 0.2s ease;
+	}
+
+	&__icon {
+		background-color: v.$red;
+	}
+
+	&__numberPlate {
+		font-size: 0.9em;
+		font-family: v.$Red-Hat-rg;
+		color: v.$white;
+	}
+}
