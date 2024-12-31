@@ -1,5 +1,4 @@
 import { Product } from '../types/product-types.mjs'
-
 import { ENTRY_POINT_DATA } from '../constants/ENTRY_JSON.mjs'
 export async function getData(): Promise<Product[]> {
 	try {
