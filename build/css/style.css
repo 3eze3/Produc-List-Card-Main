@@ -1,0 +1,536 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+img,
+picture,
+figure {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Red-Hat-Bd";
+  font-weight: 600;
+  src: local("RedHatText-Bold"), url("../assets/fonts/static/RedHatText-Bold.woff2") format(woff2), url("../assets/fonts/static/RedHatText-Bold.woff") format(woff), url("../assets/fonts/static/RedHatText-Bold.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Red-Hat-Sm";
+  src: local("RedHatText-SemiBold"), url("../assets/fonts/static/RedHatText-SemiBold.woff2") format(woff2), url("../assets/fonts/static/RedHatText-SemiBold.woff") format(woff), url("../assets/fonts/static/RedHatText-SemiBold.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Red-Hat-Rg";
+  src: local("RedHatText-Regular"), url("../assets/fonts/static/RedHatText-Regular.woff2") format(woff2), url("../assets/fonts/static/RedHatText-Regular.woff") format(woff), url("../assets/fonts/static/RedHatText-Regular.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Red-Hat-Lg";
+  src: local("RedHatText-Light"), url("../assets/fonts/RedHatText-Light.woff2") format(woff2), url("../assets/fonts/RedHatText-Light.woff") format(woff), url("../assets/fonts/RedHatText-Light.ttf") format(truetype);
+}
+body {
+  min-height: 100dvh;
+  font-family: "Red-Hat-Rg";
+  background-color: hsl(20, 50%, 98%);
+  hyphens: manual;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-family: "Red-Hat-Bd";
+  font-size: 2em;
+  color: hsl(14, 65%, 9%);
+}
+
+h2 {
+  font-size: 1em;
+}
+
+span {
+  font-family: "Red-Hat-Lg";
+}
+
+.cart__title {
+  font-size: 1.6rem;
+  font-family: "Red-Hat-Bd";
+  color: hsl(14, 86%, 42%);
+}
+
+.cart__description {
+  font-size: 0.9em;
+  font-family: "Red-Hat-Sm";
+}
+
+.card__category {
+  font-size: 0.86em;
+}
+
+.card__price {
+  color: hsl(14, 86%, 42%);
+  font-family: "Red-Hat-Sm";
+}
+
+h2,
+.card__addBtn {
+  font-family: "Red-Hat-Rg";
+  font-weight: 700;
+}
+
+.main {
+  max-width: 1400px;
+  min-height: 100dvh;
+  margin: auto;
+  padding: 5rem 6rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+@media (width <= 770px) {
+  .main {
+    text-align: center;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.products {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.7rem;
+}
+.products__title {
+  font-size: 2.5em;
+}
+.products__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 2.4rem 2rem;
+}
+
+.cart {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.75rem;
+  min-height: 18rem;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.cart__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.cart__figure-hidden {
+  display: none;
+}
+.cart__img {
+  width: 8rem;
+}
+.cart__container {
+  display: none;
+}
+.cart__container-active {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.75rem;
+}
+.cart__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 0;
+}
+.card__img {
+  min-width: 243.55px;
+  min-height: 233.87px;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, filter 0.1s ease;
+}
+.card__img-selected {
+  transform: scale(1.035);
+  filter: drop-shadow(0.25rem 1rem 0.6rem hsl(14, 25%, 72%));
+}
+.card__figure {
+  min-height: 338.69px;
+}
+.card__figcaption {
+  margin-top: 2.5rem;
+  min-height: 65.81px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.2rem;
+}
+.card__btn {
+  border-radius: 1.25rem;
+  width: 9.5rem;
+  height: 2.5rem;
+  top: calc(100% - 125px);
+  left: calc(50% - 4.75rem);
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  outline: solid hsl(14, 65%, 9%) 1px;
+  transition: color 0.1s ease;
+}
+.card__btn::before {
+  content: url("../assets/images/icons/icon-add-to-cart.svg");
+  display: block;
+}
+.card__btn:hover {
+  outline: solid hsl(14, 86%, 42%) 1px;
+  color: hsl(14, 86%, 42%);
+}
+.card__btn:hover + .card__figure .card__img {
+  transform: scale(1.035);
+  filter: drop-shadow(0.25rem 1rem 0.6rem hsl(14, 25%, 72%));
+}
+.card__btn--wrapper {
+  background-color: hsl(14, 86%, 42%);
+  outline: solid hsl(14, 86%, 42%) 1px;
+  display: none;
+}
+.card__btn--wrapper::before {
+  content: none;
+}
+.card__btn--wrapper-selected {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.card__actionBtn {
+  outline: solid hsl(0, 0%, 100%) 1px;
+  width: 1.4rem;
+  height: 1.4rem;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+  border-radius: 50%;
+  background-color: hsl(14, 86%, 42%);
+  transition: background-color 0.2s ease;
+}
+.card__actionBtn:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+.card__icon {
+  background-color: hsl(14, 86%, 42%);
+}
+.card__numberPlate {
+  font-size: 0.9em;
+  font-family: "Red-Hat-Rg";
+  color: hsl(0, 0%, 100%);
+}
+
+.item {
+  width: 100%;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem;
+  position: relative;
+}
+.item::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(14, 25%, 72%);
+  width: 100%;
+  height: 1px;
+}
+.item__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.item__information {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.item__name {
+  font-family: "Red-Hat-Bd";
+  font-size: 0.85em;
+  color: hsl(14, 65%, 9%);
+}
+.item__quantity {
+  font-family: "Red-Hat-Sm";
+  color: hsl(14, 86%, 42%);
+  font-size: 0.9em;
+  margin-right: 0.3rem;
+}
+.item__price {
+  font-family: "Red-Hat-Rg";
+  font-size: 0.9em;
+  color: hsl(14, 25%, 72%);
+}
+.item__total {
+  font-family: "Red-Hat-Sm";
+  font-size: 0.9em;
+  color: hsl(12, 20%, 44%);
+}
+.item__remove {
+  width: 1rem;
+  height: 1rem;
+  outline: solid hsl(14, 25%, 72%) 1.7px;
+  padding: 0.2rem;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: outline-color 0.1s ease;
+}
+.item__remove:hover {
+  outline-color: black;
+}
+.item__remove:hover > img {
+  filter: brightness(30%);
+}
+.item__icon {
+  transition: filter 0.1s ease;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.summary__order-total {
+  font-family: "Red-Hat-Rg";
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.summary__order-price {
+  font-family: "Red-Hat-Bd";
+  font-size: 1.5rem;
+}
+.summary__information {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background-color: hsl(20, 50%, 98%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.summary__delivery-note {
+  font-size: 0.9em;
+}
+.summary__delivery-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.summary__carbon-neutral {
+  font-family: "Red-Hat-Sm";
+}
+.summary__confirm-order {
+  border-radius: 1.5rem;
+  height: 3.25rem;
+  background-color: hsl(14, 86%, 42%);
+  font-family: "Red-Hat-Sm";
+  color: hsl(0, 0%, 100%);
+  font-size: 0.9em;
+}
+
+.container__modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 39;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  display: none;
+}
+.container__modal-active {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background-color: rgba(0, 0, 0, 0.3607843137);
+}
+
+.modal {
+  margin-top: 5rem;
+  margin-inline: auto;
+  width: 36.3rem;
+  min-height: 30rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (width <= 375px) {
+  .modal {
+    width: 100%;
+  }
+}
+.modal__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.modal__icon {
+  width: 3rem;
+}
+.modal__wrapper {
+  width: 100%;
+}
+.modal__title {
+  font-family: "Red-Hat-Bd";
+  font-size: 2.5em;
+}
+.modal__description {
+  font-family: "Red-Hat-Rg";
+}
+.modal__resume {
+  width: 100%;
+}
+.modal__list {
+  height: 15rem;
+  overflow-y: scroll;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  background-color: hsl(13, 31%, 94%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+.modal__item {
+  padding: 1rem;
+  background-color: hsl(13, 31%, 94%);
+}
+.modal__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.modal__ilustration {
+  width: 3rem;
+}
+.modal__information {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 0.4rem;
+}
+.modal__order {
+  font-family: "Red-Hat-Sm";
+}
+.modal__total {
+  font-family: "Red-Hat-Bd";
+  font-size: 1.6em;
+}
+.modal__btn {
+  width: 100%;
+  border-radius: 1.5rem;
+  height: 3.25rem;
+  background-color: hsl(14, 86%, 42%);
+  font-family: "Red-Hat-Sm";
+  color: hsl(0, 0%, 100%);
+  font-size: 0.9em;
+}
+
+/*# sourceMappingURL=style.css.map */
