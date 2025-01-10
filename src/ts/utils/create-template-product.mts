@@ -1,12 +1,12 @@
 import { Product } from '../types/product-types.mjs'
-export function createTemplate(
+export function createProduct(
 	{ image, name, category, price, id }: Product,
 	index: number
 ) {
 	const $figure = document.querySelectorAll('.card__figure')
 	if ($figure[index]) {
 		$figure[index].innerHTML = ''
-		$figure[index].setAttribute('id', id)
+		$figure[index].setAttribute('id', `figure-${id}`)
 
 		$figure[index].innerHTML = `
 		  <picture class="card__picture">
