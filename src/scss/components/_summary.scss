@@ -1,0 +1,44 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+.summary {
+	@include mx.flex($aling: stretch, $gap: 1.5rem);
+	&__order-total {
+		font-family: v.$Red-Hat-rg;
+		font-size: 0.85rem;
+		@include mx.flex($direction: row, $justify: space-between, $gap: 0.5rem);
+	}
+
+	&__order-price {
+		font-family: v.$Red-Hat-bd;
+		font-size: 1.5rem;
+	}
+
+	&__information {
+		padding: 1rem;
+		border-radius: 0.4rem;
+		background-color: v.$rose-50;
+		@include mx.flex($direction: row, $gap: 0.5rem);
+	}
+
+	&__delivery-note {
+		font-size: 0.9em;
+	}
+
+	&__delivery-icon {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	&__carbon-neutral {
+		font-family: v.$Red-Hat-sm;
+	}
+
+	&__confirm-order {
+		border-radius: 1.5rem;
+		height: 3.25rem;
+		background-color: v.$red;
+		font-family: v.$Red-Hat-sm;
+		color: v.$white;
+		font-size: 0.9em;
+	}
+}

@@ -1,0 +1,32 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+.cart {
+	background-color: v.$white;
+	border-radius: 0.75rem;
+	min-height: 18rem;
+	padding: 1.8rem;
+	@include mx.flex($aling: flex-start, $justify: flex-start, $gap: 1.5rem);
+
+	&__figure {
+		@include mx.flex($gap: 1rem);
+		&-hidden {
+			display: none;
+		}
+	}
+
+	&__img {
+		width: 8rem;
+	}
+
+	&__container {
+		display: none;
+		&-active {
+			width: 100%;
+			@include mx.flex($aling: stretch, $gap: 1.75rem);
+		}
+	}
+
+	&__list {
+		@include mx.flex($aling: flex-start, $gap: 1.4rem);
+	}
+}

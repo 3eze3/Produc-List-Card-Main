@@ -1,0 +1,99 @@
+@use '../abstract/mixins' as mx;
+@use '../abstract/variables' as v;
+.container__modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 39;
+	@include mx.flex($direction: row, $gap: 0);
+	display: none;
+	&-active {
+		@include mx.flex($direction: row, $gap: 0);
+		background-color: #0000005c;
+	}
+}
+
+.modal {
+	margin-top: 5rem;
+	margin-inline: auto;
+	width: 36.3rem;
+	min-height: 30rem;
+	border-radius: 1rem;
+	padding: 2rem;
+	@include mx.mobile(v.$mobile) {
+		width: 100%;
+	}
+
+	@include mx.flex($aling: flex-start, $justify: space-between);
+	&__header {
+		@include mx.flex($aling: flex-start, $gap: 1rem);
+	}
+
+	&__icon {
+		width: 3rem;
+	}
+
+	&__wrapper {
+		width: 100%;
+	}
+
+	&__title {
+		font-family: v.$Red-Hat-bd;
+		font-size: 2.5em;
+	}
+
+	&__description {
+		font-family: v.$Red-Hat-rg;
+	}
+	&__resume {
+		width: 100%;
+	}
+	&__list {
+		height: 15rem;
+		overflow-y: scroll;
+		width: 100%;
+		padding: 1.5rem 1rem;
+		border-top-left-radius: 0.25rem;
+		border-top-right-radius: 0.25rem;
+		background-color: v.$rose-100;
+		@include mx.flex($aling: flex-start);
+	}
+
+	&__item {
+		padding: 1rem;
+		// border-radius: 0.25rem;
+		background-color: v.$rose-100;
+	}
+	&__container {
+		@include mx.flex($direction: row, $gap: 0.6rem);
+	}
+
+	&__ilustration {
+		width: 3rem;
+	}
+
+	&__information {
+		@include mx.flex($aling: stretch, $justify: stretch, $gap: 0.4rem);
+	}
+
+	&__order {
+		font-family: v.$Red-Hat-sm;
+	}
+
+	&__total {
+		font-family: v.$Red-Hat-bd;
+		font-size: 1.6em;
+	}
+
+	&__btn {
+		width: 100%;
+		border-radius: 1.5rem;
+		height: 3.25rem;
+		background-color: v.$red;
+		font-family: v.$Red-Hat-sm;
+		color: v.$white;
+		font-size: 0.9em;
+	}
+}

@@ -22,7 +22,7 @@
 @mixin gridResponsive($size) {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax($size, 1fr));
-	gap: 2.4rem 1.5rem;
+	gap: 2.4rem 2rem;
 }
 
 @mixin shadowNeo($eje, $color) {

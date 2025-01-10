@@ -63,7 +63,7 @@
 			}
 
 			&-selected {
-				@include mx.flex($direction: row, $justify: space-around, $gap: 0rem);
+				@include mx.flex($direction: row, $justify: space-around, $gap: 1rem);
 			}
 		}
 	}
